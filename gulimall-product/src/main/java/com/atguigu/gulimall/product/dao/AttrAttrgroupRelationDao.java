@@ -6,12 +6,12 @@ import org.apache.ibatis.annotations.Mapper;
 
 /**
  * 属性&属性分组关联
- * 
+ *
  * @author zhj
  * @email 1446579723@qq.com
  * @date 2022-04-15 16:43:43
  */
 @Mapper
 public interface AttrAttrgroupRelationDao extends BaseMapper<AttrAttrgroupRelationEntity> {
-	
+
 }
