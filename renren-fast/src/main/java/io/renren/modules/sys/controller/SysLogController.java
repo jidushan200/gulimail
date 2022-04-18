@@ -8,8 +8,8 @@
 
 package io.renren.modules.sys.controller;
 
-import io.renren.common.utils.PageUtils;
-import io.renren.common.utils.R;
+import com.atguigu.common.utils.PageUtils;
+import com.atguigu.common.utils.R;
 import io.renren.modules.sys.service.SysLogService;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,17 +32,17 @@ import java.util.Map;
 public class SysLogController {
 	@Autowired
 	private SysLogService sysLogService;
-	
+
 	/**
 	 * 列表
 	 */
 	@ResponseBody
 	@GetMapping("/list")
-	@RequiresPermissions("sys:log:list")
+	//@RequiresPermissions("sys:log:list")
 	public R list(@RequestParam Map<String, Object> params){
 		PageUtils page = sysLogService.queryPage(params);
 
 		return R.ok().put("page", page);
 	}
-	
+
 }

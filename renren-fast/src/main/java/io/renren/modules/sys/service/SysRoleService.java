@@ -9,7 +9,7 @@
 package io.renren.modules.sys.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import io.renren.common.utils.PageUtils;
+import com.atguigu.common.utils.PageUtils;
 import io.renren.modules.sys.entity.SysRoleEntity;
 
 import java.util.List;
@@ -31,7 +31,7 @@ public interface SysRoleService extends IService<SysRoleEntity> {
 
 	void deleteBatch(Long[] roleIds);
 
-	
+
 	/**
 	 * 查询用户创建的角色ID列表
 	 */

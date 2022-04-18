@@ -9,8 +9,8 @@
 package io.renren.modules.app.controller;
 
 
-import io.renren.common.utils.R;
-import io.renren.common.validator.ValidatorUtils;
+import com.atguigu.common.utils.R;
+import com.atguigu.common.validator.ValidatorUtils;
 import io.renren.modules.app.entity.UserEntity;
 import io.renren.modules.app.form.RegisterForm;
 import io.renren.modules.app.service.UserService;

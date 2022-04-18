@@ -11,10 +11,10 @@ package io.renren.modules.sys.service.impl;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import io.renren.common.exception.RRException;
-import io.renren.common.utils.Constant;
-import io.renren.common.utils.PageUtils;
-import io.renren.common.utils.Query;
+import com.atguigu.common.exception.RRException;
+import com.atguigu.common.utils.Constant;
+import com.atguigu.common.utils.PageUtils;
+import com.atguigu.common.utils.Query;
 import io.renren.modules.sys.dao.SysRoleDao;
 import io.renren.modules.sys.entity.SysRoleEntity;
 import io.renren.modules.sys.service.SysRoleMenuService;
@@ -112,10 +112,10 @@ public class SysRoleServiceImpl extends ServiceImpl<SysRoleDao, SysRoleEntity> i
 		if(role.getCreateUserId() == Constant.SUPER_ADMIN){
 			return ;
 		}
-		
+
 		//查询用户所拥有的菜单列表
 		List<Long> menuIdList = sysUserService.queryAllMenuId(role.getCreateUserId());
-		
+
 		//判断是否越权
 		if(!menuIdList.containsAll(role.getMenuIdList())){
 			throw new RRException("新增角色的权限，已超出你的权限范围");

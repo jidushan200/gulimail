@@ -12,9 +12,9 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.google.gson.Gson;
-import io.renren.common.exception.RRException;
-import io.renren.common.utils.PageUtils;
-import io.renren.common.utils.Query;
+import com.atguigu.common.exception.RRException;
+import com.atguigu.common.utils.PageUtils;
+import com.atguigu.common.utils.Query;
 import io.renren.modules.sys.dao.SysConfigDao;
 import io.renren.modules.sys.entity.SysConfigEntity;
 import io.renren.modules.sys.redis.SysConfigRedis;
@@ -87,7 +87,7 @@ public class SysConfigServiceImpl extends ServiceImpl<SysConfigDao, SysConfigEnt
 
 		return config == null ? null : config.getParamValue();
 	}
-	
+
 	@Override
 	public <T> T getConfigObject(String key, Class<T> clazz) {
 		String value = getValue(key);

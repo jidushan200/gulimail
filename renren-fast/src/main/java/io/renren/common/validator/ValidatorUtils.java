@@ -6,10 +6,10 @@
  * 版权所有，侵权必究！
  */
 
-package io.renren.common.validator;
+package com.atguigu.common.validator;
 
-import io.renren.common.exception.RRException;
-import io.renren.common.utils.Constant;
+import com.atguigu.common.exception.RRException;
+import com.atguigu.common.utils.Constant;
 
 import javax.validation.ConstraintViolation;
 import javax.validation.Validation;

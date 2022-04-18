@@ -11,8 +11,8 @@ package io.renren.modules.sys.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import io.renren.common.utils.Constant;
-import io.renren.common.utils.MapUtils;
+import com.atguigu.common.utils.Constant;
+import com.atguigu.common.utils.MapUtils;
 import io.renren.modules.sys.dao.SysMenuDao;
 import io.renren.modules.sys.entity.SysMenuEntity;
 import io.renren.modules.sys.service.SysMenuService;
@@ -30,14 +30,14 @@ public class SysMenuServiceImpl extends ServiceImpl<SysMenuDao, SysMenuEntity> i
 	private SysUserService sysUserService;
 	@Autowired
 	private SysRoleMenuService sysRoleMenuService;
-	
+
 	@Override
 	public List<SysMenuEntity> queryListParentId(Long parentId, List<Long> menuIdList) {
 		List<SysMenuEntity> menuList = queryListParentId(parentId);
 		if(menuIdList == null){
 			return menuList;
 		}
-		
+
 		List<SysMenuEntity> userMenuList = new ArrayList<>();
 		for(SysMenuEntity menu : menuList){
 			if(menuIdList.contains(menu.getMenuId())){
@@ -63,7 +63,7 @@ public class SysMenuServiceImpl extends ServiceImpl<SysMenuDao, SysMenuEntity> i
 		if(userId == Constant.SUPER_ADMIN){
 			return getMenuList(null);
 		}
-		
+
 		//用户菜单列表
 		List<Long> menuIdList = sysUserService.queryAllMenuId(userId);
 		return getMenuList(menuIdList);
@@ -114,7 +114,7 @@ public class SysMenuServiceImpl extends ServiceImpl<SysMenuDao, SysMenuEntity> i
 		List<SysMenuEntity> menuList = queryListParentId(0L, menuIdList);
 		//递归获取子菜单
 		getMenuTreeList(menuList, menuIdList);
-		
+
 		return menuList;
 	}
 
@@ -123,7 +123,7 @@ public class SysMenuServiceImpl extends ServiceImpl<SysMenuDao, SysMenuEntity> i
 	 */
 	private List<SysMenuEntity> getMenuTreeList(List<SysMenuEntity> menuList, List<Long> menuIdList){
 		List<SysMenuEntity> subMenuList = new ArrayList<SysMenuEntity>();
-		
+
 		for(SysMenuEntity entity : menuList){
 			//目录
 			if(entity.getType() == Constant.MenuType.CATALOG.getValue()){
@@ -131,7 +131,7 @@ public class SysMenuServiceImpl extends ServiceImpl<SysMenuDao, SysMenuEntity> i
 			}
 			subMenuList.add(entity);
 		}
-		
+
 		return subMenuList;
 	}
 }

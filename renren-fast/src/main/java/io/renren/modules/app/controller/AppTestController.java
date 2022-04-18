@@ -9,7 +9,7 @@
 package io.renren.modules.app.controller;
 
 
-import io.renren.common.utils.R;
+import com.atguigu.common.utils.R;
 import io.renren.modules.app.annotation.Login;
 import io.renren.modules.app.annotation.LoginUser;
 import io.renren.modules.app.entity.UserEntity;

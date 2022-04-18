@@ -6,12 +6,12 @@
  * 版权所有，侵权必究！
  */
 
-package io.renren.common.aspect;
+package com.atguigu.common.aspect;
 
 import com.google.gson.Gson;
-import io.renren.common.annotation.SysLog;
-import io.renren.common.utils.HttpContextUtils;
-import io.renren.common.utils.IPUtils;
+import com.atguigu.common.annotation.SysLog;
+import com.atguigu.common.utils.HttpContextUtils;
+import com.atguigu.common.utils.IPUtils;
 import io.renren.modules.sys.entity.SysLogEntity;
 import io.renren.modules.sys.entity.SysUserEntity;
 import io.renren.modules.sys.service.SysLogService;
@@ -39,10 +39,10 @@ import java.util.Date;
 public class SysLogAspect {
 	@Autowired
 	private SysLogService sysLogService;
-	
-	@Pointcut("@annotation(io.renren.common.annotation.SysLog)")
-	public void logPointCut() { 
-		
+
+	@Pointcut("@annotation(com.atguigu.common.annotation.SysLog)")
+	public void logPointCut() {
+
 	}
 
 	@Around("logPointCut()")

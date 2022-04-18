@@ -8,7 +8,7 @@
 
 package io.renren.modules.sys.service.impl;
 
-import io.renren.common.utils.Constant;
+import com.atguigu.common.utils.Constant;
 import io.renren.modules.sys.dao.SysMenuDao;
 import io.renren.modules.sys.dao.SysUserDao;
 import io.renren.modules.sys.dao.SysUserTokenDao;

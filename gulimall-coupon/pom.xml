@@ -11,5 +11,12 @@
 
     <artifactId>gulimall-coupon</artifactId>
 
-
+    <dependencies>
+        <!--common公共微服务-->
+        <dependency>
+            <groupId>com.atguigu.gulimall</groupId>
+            <artifactId>gulimall-common</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 </project>

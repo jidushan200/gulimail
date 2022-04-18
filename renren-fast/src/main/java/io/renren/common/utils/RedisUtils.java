@@ -6,7 +6,7 @@
  * 版权所有，侵权必究！
  */
 
-package io.renren.common.utils;
+package com.atguigu.common.utils;
 
 import com.google.gson.Gson;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -6,9 +6,9 @@
  * 版权所有，侵权必究！
  */
 
-package io.renren.common.aspect;
+package com.atguigu.common.aspect;
 
-import io.renren.common.exception.RRException;
+import com.atguigu.common.exception.RRException;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -30,7 +30,7 @@ public class RedisAspect {
     @Value("${spring.redis.open: false}")
     private boolean open;
 
-    @Around("execution(* io.renren.common.utils.RedisUtils.*(..))")
+    @Around("execution(* com.atguigu.common.utils.RedisUtils.*(..))")
     public Object around(ProceedingJoinPoint point) throws Throwable {
         Object result = null;
         if(open){

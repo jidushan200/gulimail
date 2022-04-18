@@ -9,15 +9,15 @@
 package io.renren.modules.oss.controller;
 
 import com.google.gson.Gson;
-import io.renren.common.exception.RRException;
-import io.renren.common.utils.ConfigConstant;
-import io.renren.common.utils.Constant;
-import io.renren.common.utils.PageUtils;
-import io.renren.common.utils.R;
-import io.renren.common.validator.ValidatorUtils;
-import io.renren.common.validator.group.AliyunGroup;
-import io.renren.common.validator.group.QcloudGroup;
-import io.renren.common.validator.group.QiniuGroup;
+import com.atguigu.common.exception.RRException;
+import com.atguigu.common.utils.ConfigConstant;
+import com.atguigu.common.utils.Constant;
+import com.atguigu.common.utils.PageUtils;
+import com.atguigu.common.utils.R;
+import com.atguigu.common.validator.ValidatorUtils;
+import com.atguigu.common.validator.group.AliyunGroup;
+import com.atguigu.common.validator.group.QcloudGroup;
+import com.atguigu.common.validator.group.QiniuGroup;
 import io.renren.modules.oss.cloud.CloudStorageConfig;
 import io.renren.modules.oss.cloud.OSSFactory;
 import io.renren.modules.oss.entity.SysOssEntity;
@@ -46,12 +46,12 @@ public class SysOssController {
     private SysConfigService sysConfigService;
 
     private final static String KEY = ConfigConstant.CLOUD_STORAGE_CONFIG_KEY;
-	
+
 	/**
 	 * 列表
 	 */
 	@GetMapping("/list")
-	@RequiresPermissions("sys:oss:all")
+	//@RequiresPermissions("sys:oss:all")
 	public R list(@RequestParam Map<String, Object> params){
 		PageUtils page = sysOssService.queryPage(params);
 
@@ -63,7 +63,7 @@ public class SysOssController {
      * 云存储配置信息
      */
     @GetMapping("/config")
-    @RequiresPermissions("sys:oss:all")
+    //@RequiresPermissions("sys:oss:all")
     public R config(){
         CloudStorageConfig config = sysConfigService.getConfigObject(KEY, CloudStorageConfig.class);
 
@@ -75,7 +75,7 @@ public class SysOssController {
 	 * 保存云存储配置信息
 	 */
 	@PostMapping("/saveConfig")
-	@RequiresPermissions("sys:oss:all")
+	//@RequiresPermissions("sys:oss:all")
 	public R saveConfig(@RequestBody CloudStorageConfig config){
 		//校验类型
 		ValidatorUtils.validateEntity(config);
@@ -85,13 +85,13 @@ public class SysOssController {
 
 		return R.ok();
 	}
-	
+
 
 	/**
 	 * 上传文件
 	 */
 	@PostMapping("/upload")
-	@RequiresPermissions("sys:oss:all")
+	//@RequiresPermissions("sys:oss:all")
 	public R upload(@RequestParam("file") MultipartFile file) throws Exception {
 		if (file.isEmpty()) {
 			throw new RRException("上传文件不能为空");
@@ -115,7 +115,7 @@ public class SysOssController {
 	 * 删除
 	 */
 	@PostMapping("/delete")
-	@RequiresPermissions("sys:oss:all")
+	//@RequiresPermissions("sys:oss:all")
 	public R delete(@RequestBody Long[] ids){
 		sysOssService.removeByIds(Arrays.asList(ids));
 

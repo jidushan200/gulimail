@@ -6,7 +6,7 @@
  * 版权所有，侵权必究！
  */
 
-package io.renren.common.utils;
+package com.atguigu.common.utils;
 
 /**
  * 系统参数相关Key

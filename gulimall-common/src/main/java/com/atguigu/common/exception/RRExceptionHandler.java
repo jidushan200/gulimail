@@ -8,7 +8,7 @@
 
 package com.atguigu.common.exception;
 
-import com.atguigu.common.utils.R;
+import com.atguigu.common.utils.R ;
 import org.apache.shiro.authz.AuthorizationException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
